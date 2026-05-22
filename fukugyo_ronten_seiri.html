@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>副業規定を定めるかどうかの論点整理｜愛知シュタイナー学園</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    background: #f7f6f2;
+    color: #1a1a18;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* ヘッダー */
+  .page-header {
+    margin-bottom: 36px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e0ded8;
+  }
+  .org-name {
+    font-size: 12px;
+    color: #888780;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+  .page-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a1a18;
+    margin-bottom: 10px;
+  }
+  .page-intro {
+    font-size: 13px;
+    color: #5f5e5a;
+    line-height: 1.8;
+    background: #fff;
+    border: 1px solid #e0ded8;
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+
+  /* セクション */
+  .section { margin-bottom: 32px; }
+  .sec-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .sec-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .sec-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a18;
+  }
+  .sec-num-1 { background: #EEEDFE; color: #3C3489; }
+  .sec-num-2 { background: #EAF3DE; color: #3B6D11; }
+  .sec-num-3 { background: #FCEBEB; color: #A32D2D; }
+  .sec-num-4 { background: #FAEEDA; color: #854F0B; }
+  .sec-num-5 { background: #E6F1FB; color: #185FA5; }
+  .sec-num-6 { background: #EEEDFE; color: #3C3489; }
+
+  /* カードグリッド */
+  .cards { display: grid; gap: 10px; }
+  .cards-2 { grid-template-columns: 1fr 1fr; }
+  .cards-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .cards-1 { grid-template-columns: 1fr; }
+  @media (max-width: 600px) {
+    .cards-2, .cards-3 { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid #d3d1c7;
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a18;
+    margin-bottom: 5px;
+    margin-top: 6px;
+  }
+  .card-body {
+    font-size: 12px;
+    color: #5f5e5a;
+    line-height: 1.75;
+  }
+
+  /* タグ */
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .tag-q    { background: #EAF3DE; color: #3B6D11; }
+  .tag-risk { background: #FCEBEB; color: #A32D2D; }
+  .tag-law  { background: #E6F1FB; color: #185FA5; }
+  .tag-op   { background: #FAEEDA; color: #854F0B; }
+  .tag-fact { background: #EEEDFE; color: #3C3489; }
+
+  /* 注目ボックス */
+  .notice-card {
+    background: #f7f6f2;
+    border: 1px solid #d3d1c7;
+    border-left: 3px solid #888780;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #444441;
+    line-height: 1.75;
+  }
+  .notice-card strong { color: #1a1a18; }
+
+  /* 区切り線 */
+  .divider {
+    border: none;
+    border-top: 1px solid #e0ded8;
+    margin: 28px 0;
+  }
+
+  /* テーブル */
+  .matrix {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #d3d1c7;
+  }
+  .matrix th {
+    background: #f0eee8;
+    color: #444441;
+    font-weight: 600;
+    padding: 9px 12px;
+    text-align: left;
+    border-bottom: 1px solid #d3d1c7;
+    border-right: 1px solid #e0ded8;
+  }
+  .matrix th:last-child { border-right: none; }
+  .matrix td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e0ded8;
+    border-right: 1px solid #e0ded8;
+    color: #1a1a18;
+    vertical-align: top;
+    line-height: 1.65;
+  }
+  .matrix td:last-child { border-right: none; }
+  .matrix tr:last-child td { border-bottom: none; }
+  .matrix tr:nth-child(even) td { background: #faf9f6; }
+  .dot-g { color: #3B6D11; font-weight: 600; }
+  .dot-r { color: #A32D2D; font-weight: 600; }
+  .dot-y { color: #854F0B; font-weight: 600; }
+
+  /* ステップフロー */
+  .step-list { display: flex; flex-direction: column; gap: 4px; }
+  .step-box {
+    background: #fff;
+    border: 1px solid #d3d1c7;
+    border-radius: 10px;
+    padding: 14px 18px;
+  }
+  .step-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a18;
+    margin-bottom: 6px;
+  }
+  .step-desc {
+    font-size: 12px;
+    color: #5f5e5a;
+    line-height: 1.75;
+    padding-left: 14px;
+    border-left: 2px solid #e0ded8;
+  }
+  .step-arrow {
+    text-align: center;
+    font-size: 18px;
+    color: #b4b2a9;
+    line-height: 1;
+    padding: 2px 0;
+  }
+
+  /* フッター */
+  .page-footer {
+    margin-top: 48px;
+    padding-top: 16px;
+    border-top: 1px solid #e0ded8;
+    font-size: 11px;
+    color: #b4b2a9;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="page-header">
+    <div class="org-name">特定非営利活動法人 愛知シュタイナー学園｜理事会資料</div>
+    <h1 class="page-title">副業規定を定めるかどうかの論点整理</h1>
+    <p class="page-intro">理事会・関係者が「副業規定を定めるかどうか」を議論するための論点マップです。各論点は相互に関連するため、議論の順序も意識してご活用ください。</p>
+  </div>
+
+  <!-- 論点1 -->
+  <div class="section">
+    <div class="sec-header">
+      <span class="sec-num sec-num-1">1</span>
+      <span class="sec-title">前提の確認：規定を「設ける」こと自体の意味</span>
+    </div>
+    <div class="cards cards-2">
+      <div class="card">
+        <span class="tag tag-q">問い</span>
+        <div class="card-title">「規定なし」は「禁止」と同じか？</div>
+        <div class="card-body">就業規則に副業規定がない場合、法的には「禁止」とも「許可」とも言えない曖昧な状態。現状トラブルが起きた時に対処できる根拠がない。</div>
+      </div>
+      <div class="card">
+        <span class="tag tag-fact">現状</span>
+        <div class="card-title">すでに副業している教員がいる</div>
+        <div class="card-body">他組織でシュタイナー講師として収入を得ている実態がある。規定がないと「後から違反扱い」になりうるリスクがある。</div>
+      </div>
+      <div class="card">
+        <span class="tag tag-law">法律</span>
+        <div class="card-title">厚労省は副業推進を明確化</div>
+        <div class="card-body">2018年以降「副業・兼業の促進に関するガイドライン」が整備され、理由なき禁止は法的に維持しにくい方向。</div>
+      </div>
+      <div class="card">
+        <span class="tag tag-op">方針</span>
+        <div class="card-title">規定を設けること自体はほぼ必須</div>
+        <div class="card-body">「禁止」「許可制」「届出制」のいずれかを明示しない限り、現状の曖昧さを放置することになる。論点は「設けるかどうか」より「どう設けるか」。</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 論点2 -->
+  <div class="section">
+    <div class="sec-header">
+      <span class="sec-num sec-num-2">2</span>
+      <span class="sec-title">規定を設ける目的の整理：何のために定めるのか</span>
+    </div>
+    <div class="cards cards-3">
+      <div class="card">
+        <span class="tag tag-q">教員の生計保護</span>
+        <div class="card-title">給与水準の補完</div>
+        <div class="card-body">現状の給与では生計が立てられない可能性がある教員がいる。副業可能という環境を整備することで、経済的理由による退職を防ぐ。</div>
+      </div>
+      <div class="card">
+        <span class="tag tag-q">採用競争力</span>
+        <div class="card-title">応募者数の拡大</div>
+        <div class="card-body">採用時に「副業可」を明示できれば、給与水準が低くても応募者が増える可能性がある。特に複業志向の若手教員層に訴求できる。</div>
+      </div>
+      <div class="card">
+        <span class="tag tag-q">法人リスク管理</span>
+        <div class="card-title">トラブル予防と秩序</div>
+        <div class="card-body">副業の内容や時間が本業に影響する前に把握・対処できる仕組みが必要。保護者との利益相反や情報漏洩を防ぐ。</div>
+      </div>
+    </div>
+    <div class="notice-card">
+      <strong>⚑ 議論の焦点：</strong>「教員を守るため（推進）」と「法人を守るため（管理）」は目的が異なり、規定の設計に直結する。理事会でどちらを優先するか合意が必要。
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 論点3 -->
+  <div class="section">
+    <div class="sec-header">
+      <span class="sec-num sec-num-3">3</span>
+      <span class="sec-title">副業を認めることで生じうるリスク</span>
+    </div>
+    <div class="cards cards-2">
+      <div class="card">
+        <span class="tag tag-risk">教育の質</span>
+        <div class="card-title">本務への支障</div>
+        <div class="card-body">副業による疲労・時間不足が授業の質・保護者対応に影響するリスク。特にシュタイナー教育は準備負荷が高い。</div>
+      </div>
+      <div class="card">
+        <span class="tag tag-risk">信頼関係</span>
+        <div class="card-title">保護者との利益相反</div>
+        <div class="card-body">保護者・在校生を副業の顧客にする（塾・習い事等）と、教育関係に金銭関係が入り込み信頼が損なわれる。</div>
+      </div>
+      <div class="card">
+        <span class="tag tag-risk">理念</span>
+        <div class="card-title">シュタイナー教育との矛盾</div>
+        <div class="card-body">副業の内容が学園の教育理念・人間観と相容れない場合、保護者・地域の信頼を損なう可能性がある。</div>
+      </div>
+      <div class="card">
+        <span class="tag tag-risk">競合</span>
+        <div class="card-title">他のシュタイナー関連活動</div>
+        <div class="card-body">すでに他組織でシュタイナー講師として活動している教員もいる。「競合」と見るか「専門性の発揮」と見るかで方針が変わる。</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 論点4 -->
+  <div class="section">
+    <div class="sec-header">
+      <span class="sec-num sec-num-4">4</span>
+      <span class="sec-title">規定の型の選択：3つの選択肢の比較</span>
+    </div>
+    <table class="matrix">
+      <thead>
+        <tr>
+          <th style="width:18%">型</th>
+          <th style="width:25%">教員への影響</th>
+          <th style="width:25%">法人の管理負担</th>
+          <th style="width:16%">採用訴求力</th>
+          <th style="width:16%">学園との適合</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>A. 届出制</strong><br><span style="font-size:11px;color:#888780">原則可・届出のみ</span></td>
+          <td>自由度高い。申請負担なし</td>
+          <td>把握はできるが止める手段が弱い</td>
+          <td><span class="dot-g">◎ 最も高い</span></td>
+          <td><span class="dot-y">△ 管理が緩すぎる懸念</span></td>
+        </tr>
+        <tr>
+          <td><strong>B. 許可制</strong><br><span style="font-size:11px;color:#888780">原則禁止・申請許可</span></td>
+          <td>毎回申請が必要。心理的負担</td>
+          <td>個別審査が必要。担当者の負担大</td>
+          <td><span class="dot-r">△ 「禁止」印象あり</span></td>
+          <td><span class="dot-y">△ 現状の実態と乖離</span></td>
+        </tr>
+        <tr>
+          <td><strong>C. 禁止事由列挙型</strong><br><span style="font-size:11px;color:#888780">原則可・禁止事由のみ規定</span></td>
+          <td>自由度高い。禁止事由が明確</td>
+          <td>禁止事由に該当した時のみ対処</td>
+          <td><span class="dot-g">◎ 高い</span></td>
+          <td><span class="dot-g">○ 現状実態に近い</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="notice-card">
+      給与補完目的・既存副業あり、という学園の実態を踏まえると、<strong>「届出制」または「禁止事由列挙型（届出付き）」の方が実態に合う</strong>可能性がある。理事会で改めて確認が必要。
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 論点5 -->
+  <div class="section">
+    <div class="sec-header">
+      <span class="sec-num sec-num-5">5</span>
+      <span class="sec-title">シュタイナー教育固有の論点</span>
+    </div>
+    <div class="cards cards-2">
+      <div class="card">
+        <span class="tag tag-law">解釈の分岐</span>
+        <div class="card-title">他のシュタイナー組織での活動</div>
+        <div class="card-body">「競合」と見れば禁止方向。「専門性の共有・普及」と見れば推奨すら考えられる。学園としての立場を明確にする必要がある。</div>
+      </div>
+      <div class="card">
+        <span class="tag tag-law">解釈の分岐</span>
+        <div class="card-title">芸術・工芸・農業等の活動</div>
+        <div class="card-body">シュタイナー教育と親和性の高い活動（陶芸・音楽・農業等）は教員の人間的成長にも資する。「副業」として管理対象にするか否か。</div>
+      </div>
+      <div class="card">
+        <span class="tag tag-risk">リスク</span>
+        <div class="card-title">保護者との個人的金銭関係</div>
+        <div class="card-body">小規模コミュニティのため副業先と保護者が重なりやすい。「保護者を顧客にしない」という一線は明確に引く必要がある。</div>
+      </div>
+      <div class="card">
+        <span class="tag tag-op">機会</span>
+        <div class="card-title">副業経験の教育還元</div>
+        <div class="card-body">教員が外部で得た経験・技術・人脈が授業や学園に還元される可能性もある。副業を「閉じた活動」ではなく「開かれた成長」として捉える視点。</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 論点6：議論の進め方 -->
+  <div class="section">
+    <div class="sec-header">
+      <span class="sec-num sec-num-6">6</span>
+      <span class="sec-title">推奨する議論の進め方</span>
+    </div>
+    <div class="step-list">
+      <div class="step-box">
+        <div class="step-label">Step 1　目的の合意</div>
+        <div class="step-desc">教員の生計保護・採用競争力のために「副業を前向きに認める」方向か、法人の秩序維持・リスク管理が主目的か</div>
+      </div>
+      <div class="step-arrow">↓</div>
+      <div class="step-box">
+        <div class="step-label">Step 2　禁止事由の合意</div>
+        <div class="step-desc">目的が何であれ「これだけは禁止」という一線を先に合意する（保護者を顧客にしない、法人情報を使わない、本務に支障をきたさない、など）</div>
+      </div>
+      <div class="step-arrow">↓</div>
+      <div class="step-box">
+        <div class="step-label">Step 3　型の選択</div>
+        <div class="step-desc">禁止事由を列挙するだけで十分か（届出制・禁止事由型）、それとも個別審査が必要か（許可制）を判断する</div>
+      </div>
+      <div class="step-arrow">↓</div>
+      <div class="step-box">
+        <div class="step-label">Step 4　既存の副業への対応</div>
+        <div class="step-desc">すでに副業している教員への経過措置・届出期限をどうするか（施行後30日以内の届出、など）</div>
+      </div>
+      <div class="step-arrow">↓</div>
+      <div class="step-box">
+        <div class="step-label">Step 5　採用・広報への活用</div>
+        <div class="step-desc">規定が整ったら「副業可」を採用条件として明示するタイミング・文言を検討する</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    特定非営利活動法人 愛知シュタイナー学園　理事会資料　／　作成：理事 岡島まり
+  </div>
+
+</div>
+</body>
+</html>
